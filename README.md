@@ -12,12 +12,13 @@ This challenge is structured to help you build a solid foundation in JavaScript 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/hxncodes/30-days-of-Javascript-challenge.git
+   git clone https://github.com/afran18/30-Days-Javascript-Challenge.git
    ```
 
 2. **Navigate to the Project Directory:**
    ```bash
-   cd 30-days-of-Javascript-challenge
+   cd 30-Days-Javascript-Challenge
+
    ```
 
 3. **Start Practicing:**
