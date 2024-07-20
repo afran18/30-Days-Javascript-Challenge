@@ -68,3 +68,35 @@ library.books.forEach((book) => {
     console.log(book.title);
 });
 
+// Task 7: Add a method to book obj that uses the 'this' keyword to return the string with the books title and year and log
+
+library.gettitleAndYear = function() {
+    let counter = 0;
+    return this.books.map(book => {
+        counter++;
+        return `${counter}: ${book.title} - (${book.year})`
+    }).join('\n');
+}
+
+console.log(library.gettitleAndYear());
+
+// Task 8: Use a for in loop to iterate over the properties of the book object abd log each property and its value
+
+library.books.forEach((book, index) => {
+    console.log(`Book ${index + 1}:`);
+    for (let property in book) {
+        console.log(`${property}: ${book[property]}`);
+    }
+    console.log('-----------------');
+});
+let counter = 0;
+// Task 9: Use Object.keys and Object.values methods to log all keys and values of book object
+library.books.forEach(() => {
+    counter++;
+    const keys = Object.keys(book);
+    const values = Object.values(book);
+    console.log(`Book - ${counter + 1}`);
+    for(let i = 0; i<keys.length; i++) {
+        console.log(`${keys[i]} : ${[values[i]]}`);
+    }
+})
