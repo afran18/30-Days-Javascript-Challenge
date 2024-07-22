@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9</title>
+
+    <style>
+        .white {
+        color: white;
+        }
+
+        .styled-button {
+            padding: 10px;
+            outline: none;
+            background-color: white;
+            border: 5px red solid;
+            border-radius: 15px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="background-color: red; display: inline;">Original: Hi I am a H3 level Heading</h3>
+    <h3 id="heading-small" class="heading-small"
+    style="display: inline;">Hi I am a H3 level Heading</h3>
+    <button onclick="changeColor()">Change Color</button>
+
+    <ul class="my-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <div id="remove-elem">I will be removed from DOM :' &#40;</div>
+    <a target="_blank" rel="noopener noreferrer">Link with href attribute added from JS</a>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis harum voluptatibus hic impedit maxime cumque aliquid fugit, eaque, non id rerum et dolorem quas mollitia rem ullam sint illo libero.
+    Consequuntur qui voluptates, quas aspernatur accusamus, rerum laborum amet quia obcaecati odio aliquam, ipsum natus minus possimus praesentium animi consectetur dicta. Sed, a! Dolore soluta labore debitis adipisci fugit unde.</p>
+        <button onclick="changePara()" class="styled-button" id="styled-button">Change Paragraph</button>
+<script src="day9.js"></script>
+</body>
+</html>
