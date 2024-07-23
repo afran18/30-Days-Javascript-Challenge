@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10</title>
+
+    <style>
+        * {
+            margin: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        .color-square {
+            background-color: red;
+            animation: changeColor 3s infinite;
+        }
+
+        @keyframes changeColor {
+            0% { background-color: green; }
+            33% { background-color: yellow; }
+            66% { background-color: blue; }
+            100% { background-color: green; }
+        }
+        
+    </style>
+</head>
+<body>
+    <p id = 'para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla itaque dolores quam! Aliquam quisquam magni labore .</p>
+    <button onclick="replaceTextFunc()">Change Paragraph</button>
+
+    <img src="./assets/cat.png" alt="Cat" height="200px" id="cat-img"/>
+
+    <div class="box"></div>
+
+    <input type="text" id="input-field" placeholder="Type something...">
+
+
+
+
+
+<script src="day10.js"></script>
+</body>
+</html>
