@@ -16,9 +16,12 @@ myPromise.then( (val) => {
 // Task 2: Create a promise that rejects with an error message after a 2-second timeout and handle the error using.catch().
 const myPromise2 = new Promise((resolve, reject) => {
     setTimeout(() => {
+      //resolve("Promise resolved after 2 seconds");
       reject("Promise rejected after 2 seconds");
     }, 2000);
-  }).catch((error) => {
+  }).then( (val) => {
+    console.log(val);
+}).catch((error) => {
     console.error(error);
   });
 
@@ -146,3 +149,92 @@ let fetchCat = new Promise((resolve, reject) => {
     console.error("There was a problem with the fetch operation:", error);
   });
   
+// Task 7: Use the fetch API to get data from a public API and log the response data to the console using async/await.
+
+const fetchCatAsync = async () => {
+  try {
+    let res = await fetch("https://api.thecatapi.com/v1/images/search");
+
+    if (!res.ok) {
+      throw new Error("Network response was not ok " + res.statusText);
+    }
+
+    let data = await res.json();
+    console.log("Cat async: ", data[0].url);
+  } catch (err) {
+    console.log("Error");
+    console.log(err.message);
+  }
+}
+
+fetchCatAsync();
+
+// Activity 5: Concurrent Promises
+// Task 8: Use Promise.all to wait for multiple promises to resolve and then log all their values.
+
+const fetchCatImage = async () => {
+  const res = await fetch("https://api.thecatapi.com/v1/images/search");
+
+  const data = await res.json();
+  return data[0].url;
+};
+
+const fetchDogImage = async () => {
+  const res = await fetch("https://dog.ceo/api/breeds/image/random");
+
+  const data = await res.json();
+  return data.message;
+};
+
+let promise3 = new Promise((resolve,reject)=>{
+  resolve("Hello I am 3rd promise in Promise All Task 8")
+});
+
+setTimeout(() => {
+  Promise.all([
+    fetchCatImage(),
+    fetchDogImage(),
+    promise3
+  ]).then ( (value) => {
+    console.log("Data:", value);
+  }).catch((err) => {
+    console.log(err);
+  });
+}, 6000)
+
+const fetchImages = async () => {
+  try {
+    const [catImage, dogImage, thirdPromise] = await Promise.all([
+      fetchCatImage(),
+      fetchDogImage(),
+      promise3
+    ]);
+    console.log("Cat Image URL:", catImage);
+    console.log("Dog Image URL:", dogImage);
+    console.log("Promise 3:", thirdPromise);
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+};
+
+fetchImages();
+
+// Task 9: Use Promise.race to log the value of the first promise that resolves among multiple promises.
+
+promise1 = new Promise((resolve,reject)=>{
+  setTimeout(resolve,2000,"First")
+})
+
+promise2 = new Promise((resolve,reject)=>{
+  setTimeout(resolve,3000,"Second")
+})
+
+promise3 = new Promise((resolve,reject)=>{
+  setTimeout(resolve,1000,"Third")
+})
+
+Promise.race([promise1,promise2, promise3]).then((val)=>{
+  console.log("Winner",val)
+}).catch((err)=>{
+  console.log(err)
+})
