@@ -132,3 +132,41 @@ async function handlePromiseFunc() {
 }
 
 handlePromiseFunc()
+
+// Activity 5: Graceful Error Handling in Fetch
+// Task 8: Use the fetch API to request data from an invalid URL and handle the error using.catch(). Log an appropriate error message to the console. 
+const invalidUrl = "https://invalid-url.example.com";
+//const invalidUrl = "https://api.thecatapi.com/v1/images/search";
+
+fetch(invalidUrl)
+.then(res => {
+    if(!res.ok) {
+        throw new Error("Network response was not OK");
+    }
+    return res.json();
+}).then( data => {
+    console.log("Data Received:", data[0].url);
+}).catch( err => {
+    console.error("Fetch Error:", err.message);
+});
+
+// Task 9: Use the fetch API to request data from an invalid URL within an async function and handle the error using try-catch. Log an appropriate error message.
+async function fetchCat() {
+    try {
+        let res = await fetch(invalidUrl);
+        console.log("Response:",res.statusText);
+        if(!res.ok) {
+            throw new Error("Network response was not OK");
+        }
+        
+        let data = await res.json();
+
+        return data;
+    } catch(err) {
+        console.error("Async Fetch Error:", err.message);
+    }
+}
+
+fetchCat()
+
+// -------- DONE --------
