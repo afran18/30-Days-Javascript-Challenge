@@ -42,3 +42,42 @@ console.log(`Division: ${divide}`);
 
 const product = mathUtils.multiply(4, 7);
 console.log(`Product: ${product}`);
+
+// Activity 4: Using Third-Party Modules
+// Task 6: Install a third-party module (e.g., lodash) using npm. Import and use a function from this module in a script.
+const lodash = require('lodash');
+//import lodash from 'lodash';
+
+
+const myArr = [1,2,3,4,4,5,6,7,8];
+const chunkSize = 3;
+
+const chunks = lodash.chunk(myArr, chunkSize);
+
+console.log(`Original Array: ${myArr}`);
+console.log(`Chunks: ${JSON.stringify(chunks)}`);
+
+let arr = [1, 2, 3, 4, 5];
+console.log("using chunk method", lodash.chunk(arr, 2));
+
+// Compact removes all the falsy values: 0, false, NaN, null, undefined
+arr = [0, false, 2, 5, 7, 8, NaN];
+console.log("using compact method", lodash.compact(arr));
+
+// Task 7: Install a third-party module (e.g., axios) using npm. Import and use this module to make a network request in a script.
+
+const axios =  require('axios');
+
+axios.get("https://api.thecatapi.com/v1/images/search")
+.then((res) => {
+    console.log(res.data);
+}).catch((err) => {
+    console.log("Error: ", err.message);
+});
+
+// Activity 5: Module Bundling (Optional)
+// Task 8: Use a module bundler like Webpack or Parcel to bundle multiple JavaScript files into a single file. Write a script to demonstrate the bundling process.
+ /* 
+This is in task 5 directory
+
+ */
