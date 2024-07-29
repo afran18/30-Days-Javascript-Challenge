@@ -28,33 +28,33 @@ This challenge is structured to help you build a solid foundation in JavaScript 
 
 Here’s a brief overview of what to expect each day:
 
-- **Day 1:** Introduction to JavaScript
-- **Day 2:** Variables and Data Types
-- **Day 3:** Functions and Scope
-- **Day 4:** Loops and Iteration
-- **Day 5:** Arrays and Objects
-- **Day 6:** DOM Manipulation
-- **Day 7:** Event Handling
-- **Day 8:** JavaScript ES6 Features
-- **Day 9:** Async Programming (Callbacks, Promises)
-- **Day 10:** Fetch API and AJAX
-- **Day 11:** Error Handling
-- **Day 12:** JavaScript Design Patterns
-- **Day 13:** Testing JavaScript Code
-- **Day 14:** Intro to JavaScript Frameworks (e.g., React, Vue)
-- **Day 15:** Building a Simple App
-- **Day 16:** Advanced Functions
-- **Day 17:** Closures and Higher-Order Functions
-- **Day 18:** Prototypes and Inheritance
-- **Day 19:** Memory Management
-- **Day 20:** Web Storage API
-- **Day 21:** Working with Dates and Times
-- **Day 22:** Regular Expressions
-- **Day 23:** Advanced DOM Manipulation
-- **Day 24:** Canvas API and Graphics
-- **Day 25:** Web Workers
-- **Day 26:** JavaScript Performance Optimization
-- **Day 27:** Security Best Practices
-- **Day 28:** Progressive Web Apps (PWA)
-- **Day 29:** Building a Complex Project
-- **Day 30:** Reflecting and Review
+- **Day 1:** Variables and Data Types
+- **Day 2:** Operators
+- **Day 3:** Control Structures
+- **Day 4:** Loops
+- **Day 5:** Functions
+- **Day 6:** Arrays
+- **Day 7:** Objects
+- **Day 8:** ES6+ Features
+- **Day 9:** DOM Manipulation
+- **Day 10:** Event Handling
+- **Day 11:** Promises and Async:Await
+- **Day 12:** Error Handling
+- **Day 13:** Modules
+- **Day 14:** Classes
+- **Day 15:** Closures
+- **Day 16:** Recursion
+- **Day 17:** Data Structures
+- **Day 18:** Algorithms
+- **Day 19:** Regular Expressions
+- **Day 20:** LocalStorage and SessionStorage
+- **Day 21:** Leetcode Easy
+- **Day 22:** Leetcode Medium
+- **Day 23:** Leetcode Hard
+- **Day 24:** Project 1 - Weather App
+- **Day 25:** Project 2 - Movie Search App
+- **Day 26:** Project 3 - Chat Application
+- **Day 27:** Project 4 - Task Management App
+- **Day 28:** Project 5 - E-commerce Website
+- **Day 29:** Project 6 - Social Media Dashboard
+- **Day 30:** Final - Social Media Dashboard with Full Features
