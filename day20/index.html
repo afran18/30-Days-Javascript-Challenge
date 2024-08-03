@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 20 - Local Storage</title>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+    <button id="removeItem" onClick = removeItem()>Remove Item</button>
+    
+
+    <script src="./day20.js"></script>
+
+    <script>
+        // Activity 1: Understanding LocalStorage
+// Task 1: Write a script to save a string value to localStorage and retrieve it. Log the retrieved value.
+// Save a string value to localStorage
+localStorage.setItem('myKey', 'Hello, LocalStorage!');
+const retrievedValue = localStorage.getItem('myKey');
+console.log(retrievedValue);
+
+//Task 2: Write a script to save an object to localStorage by converting it to a JSON string. Retrieve and parse the object, then log it.
+const myObject = {
+            name: 'Afran',
+            age: 23,
+            city: 'Belgaum'
+        };
+
+localStorage.setItem('myObjectKey', JSON.stringify(myObject));
+
+const retrievedObjectString = localStorage.getItem('myObjectKey');
+const retrievedObject = JSON.parse(retrievedObjectString);
+
+console.log(retrievedObject);
+
+// Activity 2: Using LocalStorage
+// Task 3: Create a simple form that saves user input (e.g., name and email) to localStorage when submitted. Retrieve and display the saved data on page load.
+function saveFormData(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const userData = {
+                name: name,
+                email: email
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Display the saved data
+            displayUserData();
+        }
+
+        // Function to display saved user data
+        function displayUserData() {
+            const resultDiv = document.getElementById('result');
+            const savedData = localStorage.getItem('userData');
+
+            if (savedData) {
+                const userData = JSON.parse(savedData);
+                resultDiv.innerHTML = `
+                    <h2>Saved User Data</h2>
+                    <p><strong>Name:</strong> ${userData.name}</p>
+                    <p><strong>Email:</strong> ${userData.email}</p>
+                `;
+            } else {
+                resultDiv.innerHTML = '<p>No user data found.</p>';
+            }
+        }
+
+        // Attach event listener to the form
+        document.getElementById('userForm').addEventListener('submit', saveFormData);
+
+        // Display saved data on page load
+        window.onload = displayUserData;
+// Task 4: Write a script to remove an item from localStorage. Log the localStorage content before and after removal.
+function removeItem() {
+    if(localStorage.getItem('myKey')) {
+        localStorage.removeItem('myKey');
+    } else {
+        console.log("Item already removed");
+        
+    }
+}
+
+// Activity 3: Understanding SessionStorage
+// Task 5: Write a script to save a string value to sessionStorage and retrieve it. Log the retrieved value.
+
+sessionStorage.setItem('mySessionKey', 'Hello, SessionStorage!');
+const retrievedSessionValue = sessionStorage.getItem('mySessionKey');
+console.log('Retrieved SessionStorage Value:', retrievedSessionValue);
+
+// Task 6: Write a script to save an object to sessionStorage by converting it to a JSON string. Retrieve and parse the object, then log it.
+
+const mySessionObject = {
+            name: 'Afran',
+            age: 23,
+            occupation: 'Developer'
+        };
+
+        // Convert the object to a JSON string and save it to sessionStorage
+        sessionStorage.setItem('mySessionObjectKey', JSON.stringify(mySessionObject));
+
+        // Retrieve the JSON string from sessionStorage
+        const retrievedSessionObjectString = sessionStorage.getItem('mySessionObjectKey');
+
+        // Parse the JSON string back to an object
+        const retrievedSessionObject = JSON.parse(retrievedSessionObjectString);
+
+        // Log the retrieved object
+        console.log('Retrieved SessionStorage Object:', retrievedSessionObject);
+
+
+
+
+
+    </script>  
+</body>
+</html>

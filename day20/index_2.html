@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day20_2</title>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+    <button id="removeItem">Remove User Data</button>
+
+    <script>
+// Activity 4: Using SessionStorage
+// Task 7: Create a simple form that saves user input (e.g., name and email) to sessionStorage when submitted. Retrieve and display the saved data on page load.
+
+        function saveFormData(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const userData = {
+                name: name,
+                email: email
+            };
+
+            sessionStorage.setItem('userData', JSON.stringify(userData));
+            
+            displayUserData();
+        }
+
+        function displayUserData() {
+            const resultDiv = document.getElementById('result');
+            const savedData = sessionStorage.getItem('userData');
+
+            if (savedData) {
+                const userData = JSON.parse(savedData);
+                resultDiv.innerHTML = `
+                    <h2>Saved User Data</h2>
+                    <p><strong>Name:</strong> ${userData.name}</p>
+                    <p><strong>Email:</strong> ${userData.email}</p>
+                `;
+            } else {
+                resultDiv.innerHTML = '<p>No user data found.</p>';
+            }
+        }
+// Task 8: Write a script to remove an item from sessionStorage. Log the sessionStorage content before and after removal.
+
+        function removeItem() {
+            console.log('SessionStorage Content Before Removal:');
+            logSessionStorage();
+            sessionStorage.removeItem('userData');
+            console.log('SessionStorage Content After Removal:');
+            logSessionStorage();
+        }
+
+        function logSessionStorage() {
+            if (sessionStorage.length > 0) {
+                for (let i = 0; i < sessionStorage.length; i++) {
+                    const key = sessionStorage.key(i);
+                    const value = sessionStorage.getItem(key);
+                    console.log(`${key}: ${value}`);
+                }
+            } else {
+                console.log('SessionStorage is empty.');
+            }
+        }
+
+        document.getElementById('userForm').addEventListener('submit', saveFormData);
+        document.getElementById('removeItem').addEventListener('click', removeItem);
+
+        window.onload = displayUserData;
+    </script>
+</body>
+</html>

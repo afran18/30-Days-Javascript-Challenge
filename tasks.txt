@@ -1,17 +1,17 @@
-Day 17: Data Structures
+Day 20: LocalStorage and SessionStorage
 Tasks/Activities:
-Activity 1: Linked List
-Task 1: Implement a Node class to represent an element in a linked list with properties value and next.
-Task 2: Implement a LinkedList class with methods to add a node to the end, remove a node from the end, and display all nodes.
-Activity 2: Stack
-Task 3: Implement a Stack class with methods push (add element), pop (remove element), and peek (view the top element).
-Task 4: Use the Stack class to reverse a string by pushing all characters onto the stack and then popping them off.
-Activity 3: Queue
-Task 5: Implement a Queue class with methods enqueue (add element), dequeue (remove element), and front (view the first element).
-Task 6: Use the Queue class to simulate a simple printer queue where print jobs are added to the queue and processed in order.
-Activity 4: Binary Tree
-• Task 7: Implement a TreeNode class to represent a node in a binary tree with properties value, left, and right.
-Task 8: Implement a BinaryTree class with methods for inserting values and performing in-order traversal to display nodes.
-Activity 5: Graph (Optional)
-Task 9: Implement a Graph class with methods to add vertices, add edges, and perform a breadth-first search (BFS).
-Task 10: Use the Graph class to represent a simple network and perform BFS to find the shortest path between two nodes.
+Activity 1: Understanding LocalStorage
+Task 1: Write a script to save a string value to localStorage and retrieve it. Log the retrieved value.
+Task 2: Write a script to save an object to localStorage by converting it to a JSON string. Retrieve and parse the object, then log it.
+Activity 2: Using LocalStorage
+Task 3: Create a simple form that saves user input (e.g., name and email) to localStorage when submitted. Retrieve and display the saved data on page load.
+Task 4: Write a script to remove an item from localStorage. Log the localStorage content before and after removal.
+Activity 3: Understanding SessionStorage
+Task 5: Write a script to save a string value to sessionStorage and retrieve it. Log the retrieved value.
+Task 6: Write a script to save an object to sessionStorage by converting it to a JSON string. Retrieve and parse the object, then log it.
+Activity 4: Using SessionStorage
+Task 7: Create a simple form that saves user input (e.g., name and email) to sessionStorage when submitted. Retrieve and display the saved data on page load.
+Task 8: Write a script to remove an item from sessionStorage. Log the sessionStorage content before and after removal.
+Activity 5: Comparing LocalStorage and SessionStorage
+Task 9: Write a function that accepts a key and a value, and saves the value to both localStorage and sessionStorage. Retrieve and log the values from both storage mechanisms.
+Task 10: Write a function that clears all data from both localStorage and sessionStorage. Verify that both storages are empty.
