@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# WEATHEr APP API KEY : "9b2ca8df849188e137724f8f8ce3dad8"

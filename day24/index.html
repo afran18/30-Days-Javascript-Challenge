@@ -34,9 +34,23 @@
             <h2>Current Weather Report</h2>
         </div>
         <div class ="currWeather-items">
-            <p id="city-name">City: </p>
-            <p id="temperature">Temperature: --°C</p>
-            <p id="condition">Condition: --</p>
+            <div class = "currWeather-items-left">
+                <p id="city-name">City</p>
+                <h1 id="temperature">Temperature: --°C</h1>
+                <p id="condition">Condition: --</p>
+            </div>
+            <div style="display: flex; gap: 30px;">
+            <div class="currWeather-items-right">
+                <p>Wind</p>
+                <p>Pressure</p>
+                <p>Humidity</p>
+            </div>
+            <div class="currWeather-items-right-right">
+                <p id="wind">0 m/s</p>
+                <p id="pressure">0 hPa</p>
+                <p id="humidity">0 %</p>
+            </div>
+        </div>
         </div>
         </div>
 <!-- Activity 4: Displaying a 5-Day Forecast
@@ -44,7 +58,7 @@ Task 7: Use the fetch API to get a 5-day weather forecast from the public weathe
 Task 8: Parse the forecast data and display the temperature and weather condition for each day in the forecast on the web page.
  -->
         <div class="fiveDayForecast aboreto-regular">
-            <h3>5 Day Forecast</h3>
+            <h2>5 Day Forecast</h2>
             <div id="fiveDayData">
                 
             </div>
