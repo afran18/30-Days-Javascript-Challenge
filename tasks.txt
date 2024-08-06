@@ -1,18 +1,17 @@
-Day 23: LeetCode Hard
+Day 24: Project 1 - Weather App
 Tasks/Activities:
-Activity 1: Median of Two Sorted Arrays
-Task 1: Solve the "Median of Two Sorted Arrays" problem on LeetCode.
-Write a function that takes two sorted arrays of integers and returns the median of the two sorted arrays. • Log the median for a few test cases, including edge cases.
-Activity 2: Merge k Sorted Lists
-Task 2: Solve the "Merge k Sorted Lists" problem on LeetCode.
-Write a function that takes an array of k linked lists, each linked list is sorted in ascending order, and merges all the linked lists into one sorted linked list. Create a few test cases with linked lists and log the merged list.
-Activity 3: Trapping Rain Water
-Task 3: Solve the 'Trapping Rain Water" problem on LeetCode.
-Write a function that takes an array of non-negative integers representing an elevation map where the width of each bar is 1, and computes how much water it can trap after raining. Log the amount of trapped water for a few test cases.
-Activity 4: N-Queens
-Task 4: Solve the "N-Queens" problem on LeetCode.
-Write a function that places n queens on an nan chessboard such that no two queens attack each other, and returns all distinct solutions to the n- queens puzzle. Log the distinct solutions for a few test cases.
-Activity 5: Word Ladder
-Task 5: Solve the "Word Ladder" problem on LeetCode.
-Write a function that takes a begin word, an end word, and a dictionary of words, and finds the length of the shortest transformation sequence from the begin word to the end word, such that only one letter can be changed at a time and each transformed word must exist in the word list.
-Log the length of the shortest transformation sequence for a few test cases.
+Activity 1: Setting Up the Project
+Task 1: Initialize a new project directory and set up the basic HTML structure for the weather app.
+• Task 2: Add a basic CSS file to style the weather app, including a container for displaying weather information.
+Activity 2: Fetching Weather Data
+Task 3: Use the fetch API to get current weather data from a public weather API (e.g., OpenWeatherMap). Log the response data to the console.
+Task 4: Parse the weather data and display the current temperature, weather condition, and city name on the web page.
+Activity 3: Adding Search Functionality
+Task 5: Add an input field and a search button to the HTML structure. Style the input and button using CSS.
+Task 6: Write a function to fetch and display weather data for a city entered in the search input field. Log any errors to the console.
+Activity 4: Displaying a 5-Day Forecast
+Task 7: Use the fetch API to get a 5-day weather forecast from the public weather API. Log the response data to the console.
+Task 8: Parse the forecast data and display the temperature and weather condition for each day in the forecast on the web page.
+Activity 5: Enhancing the Ul
+Task 9: Add icons or images to represent different weather conditions (e.g., sunny, rainy, cloudy) based on the weather data.
+Task 10: Add CSS animations or transitions to make the weather app more interactive and visually appealing.

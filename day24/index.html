@@ -1,0 +1,64 @@
+<!-- Day 24: Project 1 - Weather App -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Activity 1: Setting Up the Project
+        Task 1: Initialize a new project directory and set up the basic HTML structure for the weather app.  
+        Task 2: Add a basic CSS file to style the weather app, including a container for displaying weather information. -->
+
+    <div class="container">
+        <div class="header">
+            <h1 id="top">Weather Partner</h1>
+        <!-- Activity 3: Adding Search Functionality
+        Task 5: Add an input field and a search button to the HTML structure. Style the input and button using CSS.
+        -->
+            <div class="search">
+                <form id="myForm">
+                    <input type="text" name="search" id="search" placeholder="Search City">
+                    <button type="submit" name="submit-btn" id="submit-btn">Search</button>
+                </form>
+            </div>
+        </div>
+    <!-- Activity 2: Fetching Weather Data
+    Task 4: Parse the weather data and display the current temperature, weather condition, and city name on the web
+    page. -->
+        <div class="currWeather">
+            <div>
+            <h2>Current Weather Report</h2>
+        </div>
+        <div class ="currWeather-items">
+            <p id="city-name">City: </p>
+            <p id="temperature">Temperature: --°C</p>
+            <p id="condition">Condition: --</p>
+        </div>
+        </div>
+<!-- Activity 4: Displaying a 5-Day Forecast
+Task 7: Use the fetch API to get a 5-day weather forecast from the public weather API. Log the response data to the console.
+Task 8: Parse the forecast data and display the temperature and weather condition for each day in the forecast on the web page.
+ -->
+        <div class="fiveDayForecast aboreto-regular">
+            <h3>5 Day Forecast</h3>
+            <div id="fiveDayData">
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+<script src="index.js"></script>    
+</body>
+</html>
