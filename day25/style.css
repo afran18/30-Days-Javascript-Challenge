@@ -41,7 +41,6 @@ body {
 }
 
 header {
-    background-image: linear-gradient(rgb(0, 0, 90), rgba(255, 255, 255,0));
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -140,9 +139,10 @@ header {
     margin-bottom: 1em;
 }
 
-#movie-details #play-button {
+#movie-details #play-button,
+#movie-details #more-info {
     font-size: 1.3em;
-    padding: 8px;
+    padding: 8px 16px;
     outline: none;
     border: none;
     background-color: #ffdd00;
@@ -150,8 +150,88 @@ header {
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    margin-left: 0.5em;
 }
 
-#movie-details #play-button:hover {
+#movie-details #play-button {
+    background-color: #ffdd00;
+    border: 3px solid #fd0;
+}
+
+#movie-details #more-info {
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+#movie-details #play-button:hover,
+#movie-details #more-info:hover {
     transform: scale(1.05);
+}
+
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #00003f;
+    margin: auto;
+    border: 2px solid #0004ff;
+    width: 80%;
+    border-radius: 32px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.modal-poster-left {
+    margin: 0;
+}
+#modal-poster {
+    height: 100%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    margin-right: 20px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#modal-details {
+    font-family: "Poppins", sans-serif;
+    margin: 2em;
+}
+
+#modal-details h2 {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+#modal-details h3,
+#modal-details p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }

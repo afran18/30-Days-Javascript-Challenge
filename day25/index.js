@@ -37,4 +37,49 @@ document.getElementById("movie-search").addEventListener("submit", (e) => {
     e.preventDefault();
     let movie = document.getElementById("search").value;
     searchMovie(movie);
-})
+});
+
+
+// Get modal elements
+const modal = document.getElementById('modal');
+const closeModal = document.getElementsByClassName('close')[0];
+
+const openModal = (movie) => {
+    let img = document.getElementById('modal-poster');
+    img.setAttribute('src', movie.Poster)
+    document.getElementById('modal-title').innerHTML = movie.Title;
+    document.getElementById('modal-release').innerHTML = `Released: ${movie.Released}`;
+    document.getElementById('modal-rating').innerHTML = `IMDB Ratings: ${movie.imdbRating}`;
+    document.getElementById('modal-plot').innerHTML = `<b>Plot:</b> ${movie.Plot}`;
+    document.getElementById('modal-director').innerHTML = `<b>Director:</b> ${movie.Director}`;
+    document.getElementById('modal-actors').innerHTML = `<b>Actors:</b> ${movie.Actors}`;
+    document.getElementById('modal-genre').innerHTML = `<b>Genre: </b>${movie.Genre}`
+    modal.style.display = "flex";
+}
+
+closeModal.onclick = () => {
+    modal.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Modify the "More Info" button to open the modal
+document.getElementById('more-info').addEventListener('click', () => {
+    let movieTitle = document.getElementById("title").innerText;
+    fetchMovieDetails(movieTitle); // Function to fetch movie details
+});
+
+// Function to fetch detailed movie info
+const fetchMovieDetails = async (movieTitle) => {
+    try {
+        let response = await fetch(`http://www.omdbapi.com/?t=${movieTitle}&apikey=${API_key}`);
+        let data = await response.json();
+        openModal(data);
+    } catch (err) {
+        console.log("Error fetching movie details:", err);
+    }
+}
